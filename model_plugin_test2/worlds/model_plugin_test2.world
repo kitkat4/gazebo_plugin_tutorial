@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="default">
+
+    <!-- Ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <model name="box">
+
+      <pose>0 0 5.0 0 0 0</pose>
+      
+      <link name="base_link">
+
+        <inertial>
+          <mass>1.0</mass>
+          <inertia>
+            <ixx>0.16666666666666666</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>0.16666666666666666</iyy>
+            <iyz>0.0</iyz>
+            <izz>0.16666666666666666</izz>
+          </inertia>
+        </inertial>
+        
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </visual>
+        
+      </link>
+
+      <!-- Model plugin -->
+      <plugin name="model_plugin_test2" filename="libmodel_plugin_test2.so"/>
+
+    </model>
+    
+  </world>
+  
+</sdf>
+
+
+
