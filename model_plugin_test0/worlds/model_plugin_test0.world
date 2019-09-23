@@ -1,8 +1,41 @@
 <?xml version="1.0"?>
 <sdf version="1.4">
   <world name="default">
-    <plugin name="hello_world" filename="libhello_world.so"/>
+
+    <!-- Ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <model name="box">
+      <pose>0 0 5.0 0 0 0</pose>
+      <link name="link">
+        
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </visual>
+        
+      </link>
+
+      <!-- Model plugin -->
+      <plugin name="model_plugin_test0" filename="libmodel_plugin_test0.so"/>
+      
+    </model>
+    
   </world>
+  
 </sdf>
 
 
